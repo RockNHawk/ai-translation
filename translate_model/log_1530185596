@@ -1,0 +1,43 @@
+# log_file=/home/ubuntu/ai-translation/translate_model/log_1530185596
+# Start step 0, lr 1, Thu Jun 28 11:33:35 2018
+  step 100 lr 1 step-time 0.44s wps 14.93K ppl 85989.88 gN 103.00 bleu 0.00, Thu Jun 28 11:34:19 2018
+  step 200 lr 1 step-time 0.24s wps 25.26K ppl 3569.60 gN 16.24 bleu 0.00, Thu Jun 28 11:34:43 2018
+  step 300 lr 1 step-time 0.24s wps 24.88K ppl 1908.84 gN 9.77 bleu 0.00, Thu Jun 28 11:35:07 2018
+  step 400 lr 1 step-time 0.22s wps 24.85K ppl 1404.28 gN 8.45 bleu 0.00, Thu Jun 28 11:35:29 2018
+  step 500 lr 1 step-time 0.22s wps 24.49K ppl 1033.74 gN 5.72 bleu 0.00, Thu Jun 28 11:35:51 2018
+  step 600 lr 1 step-time 0.22s wps 24.37K ppl 896.60 gN 5.89 bleu 0.00, Thu Jun 28 11:36:13 2018
+  step 700 lr 1 step-time 0.22s wps 24.55K ppl 756.03 gN 5.12 bleu 0.00, Thu Jun 28 11:36:35 2018
+  step 800 lr 1 step-time 0.22s wps 24.58K ppl 660.01 gN 4.19 bleu 0.00, Thu Jun 28 11:36:56 2018
+  step 900 lr 1 step-time 0.22s wps 24.65K ppl 601.62 gN 4.42 bleu 0.00, Thu Jun 28 11:37:18 2018
+  step 1000 lr 1 step-time 0.21s wps 24.53K ppl 542.08 gN 4.20 bleu 0.00, Thu Jun 28 11:37:40 2018
+  step 1100 lr 1 step-time 0.22s wps 24.69K ppl 508.88 gN 4.40 bleu 0.00, Thu Jun 28 11:38:09 2018
+  step 1200 lr 1 step-time 0.22s wps 24.82K ppl 470.17 gN 4.17 bleu 0.00, Thu Jun 28 11:38:31 2018
+  step 1300 lr 1 step-time 0.22s wps 24.82K ppl 432.32 gN 4.24 bleu 0.00, Thu Jun 28 11:38:52 2018
+  step 1400 lr 1 step-time 0.21s wps 24.67K ppl 402.26 gN 4.19 bleu 0.00, Thu Jun 28 11:39:14 2018
+  step 1500 lr 1 step-time 0.41s wps 14.69K ppl 484.76 gN 4.90 bleu 1.01, Thu Jun 28 11:41:38 2018
+  step 1600 lr 1 step-time 0.25s wps 25.17K ppl 428.13 gN 4.69 bleu 1.01, Thu Jun 28 11:42:03 2018
+  step 1700 lr 1 step-time 0.23s wps 24.85K ppl 372.35 gN 4.28 bleu 1.01, Thu Jun 28 11:42:27 2018
+  step 1800 lr 1 step-time 0.23s wps 24.71K ppl 340.28 gN 4.19 bleu 1.01, Thu Jun 28 11:42:49 2018
+  step 1900 lr 1 step-time 0.22s wps 24.49K ppl 299.49 gN 3.94 bleu 1.01, Thu Jun 28 11:43:11 2018
+  step 2000 lr 1 step-time 0.21s wps 24.43K ppl 267.94 gN 3.83 bleu 1.01, Thu Jun 28 11:43:33 2018
+  step 2100 lr 1 step-time 0.22s wps 24.87K ppl 270.00 gN 4.30 bleu 1.01, Thu Jun 28 11:44:02 2018
+  step 2200 lr 1 step-time 0.21s wps 24.90K ppl 258.94 gN 4.30 bleu 1.01, Thu Jun 28 11:44:24 2018
+  step 2300 lr 1 step-time 0.22s wps 25.12K ppl 246.11 gN 4.20 bleu 1.01, Thu Jun 28 11:44:46 2018
+  step 2400 lr 1 step-time 0.21s wps 25.51K ppl 236.25 gN 4.22 bleu 1.01, Thu Jun 28 11:45:06 2018
+  step 2500 lr 1 step-time 0.21s wps 25.66K ppl 221.50 gN 3.96 bleu 1.01, Thu Jun 28 11:45:27 2018
+  step 2600 lr 1 step-time 0.21s wps 25.85K ppl 212.97 gN 4.26 bleu 1.01, Thu Jun 28 11:45:48 2018
+  step 2700 lr 1 step-time 0.21s wps 25.61K ppl 200.80 gN 3.90 bleu 1.01, Thu Jun 28 11:46:09 2018
+  step 2800 lr 1 step-time 0.21s wps 25.69K ppl 195.81 gN 4.23 bleu 1.01, Thu Jun 28 11:46:29 2018
+  step 2900 lr 1 step-time 0.38s wps 15.19K ppl 226.17 gN 4.83 bleu 1.01, Thu Jun 28 11:48:53 2018
+  step 3000 lr 1 step-time 0.25s wps 25.41K ppl 232.45 gN 4.89 bleu 1.01, Thu Jun 28 11:49:17 2018
+  step 3100 lr 1 step-time 0.23s wps 26.12K ppl 199.92 gN 4.32 bleu 1.01, Thu Jun 28 11:49:48 2018
+  step 3200 lr 1 step-time 0.22s wps 25.89K ppl 183.10 gN 4.51 bleu 1.01, Thu Jun 28 11:50:10 2018
+  step 3300 lr 1 step-time 0.21s wps 25.87K ppl 166.23 gN 4.49 bleu 1.01, Thu Jun 28 11:50:31 2018
+  step 3400 lr 1 step-time 0.21s wps 25.49K ppl 152.63 gN 4.27 bleu 1.01, Thu Jun 28 11:50:51 2018
+  step 3500 lr 1 step-time 0.21s wps 25.78K ppl 151.39 gN 4.18 bleu 1.01, Thu Jun 28 11:51:13 2018
+  step 3600 lr 1 step-time 0.21s wps 25.71K ppl 140.12 gN 4.17 bleu 1.01, Thu Jun 28 11:51:33 2018
+  step 3700 lr 1 step-time 0.21s wps 25.42K ppl 141.66 gN 4.42 bleu 1.01, Thu Jun 28 11:51:54 2018
+  step 3800 lr 1 step-time 0.21s wps 25.48K ppl 132.59 gN 4.31 bleu 1.01, Thu Jun 28 11:52:15 2018
+  step 3900 lr 1 step-time 0.21s wps 25.65K ppl 131.82 gN 4.41 bleu 1.01, Thu Jun 28 11:52:36 2018
+  step 4000 lr 1 step-time 0.21s wps 25.48K ppl 129.53 gN 4.56 bleu 1.01, Thu Jun 28 11:52:57 2018
+  step 4100 lr 1 st

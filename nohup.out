@@ -1,0 +1,515 @@
+# Job id 0
+# Loading hparams from /home/ubuntu/ai-translation/translate_model/hparams
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+  saving hparams to /home/ubuntu/ai-translation/translate_model/best_bleu/hparams
+  attention=scaled_luong
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=7.590568360246028
+  best_bleu_dir=/home/ubuntu/ai-translation/translate_model/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  decay_scheme=
+  dev_prefix=/home/ubuntu/ai-translation/data/dev
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  init_op=uniform
+  init_weight=0.1
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_layers=2
+  num_train_steps=12000
+  num_translations_per_input=1
+  num_units=128
+  optimizer=sgd
+  out_dir=/home/ubuntu/ai-translation/translate_model
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=en
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=/home/ubuntu/ai-translation/data/vocab.en
+  src_vocab_size=25003
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=/home/ubuntu/ai-translation/data/test
+  tgt=cn
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=/home/ubuntu/ai-translation/data/vocab.cn
+  tgt_vocab_size=25003
+  time_major=True
+  train_prefix=/home/ubuntu/ai-translation/data/train
+  unit_type=lstm
+  vocab_prefix=/home/ubuntu/ai-translation/data/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# creating train graph ...
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=12000, decay_steps 0, decay_factor 1
+# Trainable variables
+  embeddings/encoder/embedding_encoder:0, (25003, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (25003, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (128, 128), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (384, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (256, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 25003), 
+# creating eval graph ...
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+  embeddings/encoder/embedding_encoder:0, (25003, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (25003, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (128, 128), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (384, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (256, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 25003), 
+# creating infer graph ...
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+  embeddings/encoder/embedding_encoder:0, (25003, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (25003, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (128, 128), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (384, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (256, 128), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 25003), 
+# log_file=/home/ubuntu/ai-translation/translate_model/log_1530188243
+2018-06-28 12:17:23.930786: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-06-28 12:17:23.931189: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 0 with properties: 
+name: Tesla K80 major: 3 minor: 7 memoryClockRate(GHz): 0.8235
+pciBusID: 0000:00:1e.0
+totalMemory: 11.17GiB freeMemory: 11.10GiB
+2018-06-28 12:17:23.931213: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0
+2018-06-28 12:17:24.220499: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-06-28 12:17:24.220556: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 
+2018-06-28 12:17:24.220565: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N 
+2018-06-28 12:17:24.220875: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10763 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-06-28 12:17:24.222479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0
+2018-06-28 12:17:24.222516: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-06-28 12:17:24.222526: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 
+2018-06-28 12:17:24.222533: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N 
+2018-06-28 12:17:24.222756: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10763 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+2018-06-28 12:17:24.222999: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0
+2018-06-28 12:17:24.223027: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2018-06-28 12:17:24.223036: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 
+2018-06-28 12:17:24.223042: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N 
+2018-06-28 12:17:24.223260: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10763 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:00:1e.0, compute capability: 3.7)
+  loaded train model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-6000, time 0.26s
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-6000, time 0.14s
+  # 3688
+    src: sustainable eco living
+    ref: 精美 住宅 ， 环保 节能
+    nmt: 精品 住宅 ， 位于 乡村
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-6000, time 0.11s
+  eval dev: perplexity 18.77, time 4s, Thu Jun 28 12:17:29 2018.
+  eval test: perplexity 16.12, time 3s, Thu Jun 28 12:17:33 2018.
+2018-06-28 12:17:33.650963: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:17:33.651004: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:17:33.650969: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-6000, time 0.06s
+# External evaluation, global step 6000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 32s, Thu Jun 28 12:18:05 2018.
+  bleu dev: 10.1
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 6000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 32s, Thu Jun 28 12:18:39 2018.
+  bleu test: 10.5
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# Start step 6000, lr 1, Thu Jun 28 12:18:40 2018
+# Init train iterator, skipping 0 elements
+2018-06-28 12:18:51.184578: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:94] Filling up shuffle buffer (this may take a while): 125453 of 128000
+2018-06-28 12:18:51.381567: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:129] Shuffle buffer filled.
+  step 6100 lr 1 step-time 0.43s wps 15.15K ppl 80.12 gN 6.04 bleu 10.13, Thu Jun 28 12:19:22 2018
+  step 6200 lr 1 step-time 0.24s wps 25.59K ppl 73.23 gN 5.93 bleu 10.13, Thu Jun 28 12:19:46 2018
+  step 6300 lr 1 step-time 0.23s wps 25.21K ppl 65.91 gN 5.52 bleu 10.13, Thu Jun 28 12:20:10 2018
+  step 6400 lr 1 step-time 0.22s wps 25.12K ppl 61.16 gN 5.43 bleu 10.13, Thu Jun 28 12:20:32 2018
+  step 6500 lr 1 step-time 0.21s wps 24.85K ppl 56.73 gN 5.25 bleu 10.13, Thu Jun 28 12:20:53 2018
+  step 6600 lr 1 step-time 0.21s wps 25.13K ppl 56.51 gN 5.28 bleu 10.13, Thu Jun 28 12:21:14 2018
+  step 6700 lr 1 step-time 0.22s wps 24.86K ppl 55.84 gN 5.32 bleu 10.13, Thu Jun 28 12:21:36 2018
+  step 6800 lr 1 step-time 0.21s wps 24.82K ppl 53.49 gN 5.26 bleu 10.13, Thu Jun 28 12:21:57 2018
+  step 6900 lr 1 step-time 0.22s wps 24.97K ppl 53.93 gN 5.38 bleu 10.13, Thu Jun 28 12:22:19 2018
+  step 7000 lr 1 step-time 0.21s wps 24.81K ppl 51.72 gN 5.33 bleu 10.13, Thu Jun 28 12:22:40 2018
+# Save eval, global step 7000
+2018-06-28 12:22:41.015031: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:22:41.015056: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:22:41.015521: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-7000, time 0.06s
+  # 4134
+    src: - within 300 m * to south bank , busway & train station
+    ref: - 距离 south bank 、 busway 和 火车站 不 到 300 米 *
+    nmt: - 距 悉尼 南 威尔士 线 、 <unk> 火车站 、 <unk> 火车站 和 火车站
+2018-06-28 12:22:41.120997: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:22:41.120998: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-7000, time 0.06s
+  eval dev: perplexity 14.86, time 3s, Thu Jun 28 12:22:44 2018.
+  eval test: perplexity 12.87, time 3s, Thu Jun 28 12:22:48 2018.
+  step 7100 lr 1 step-time 0.21s wps 24.73K ppl 49.93 gN 5.35 bleu 10.13, Thu Jun 28 12:23:09 2018
+  step 7200 lr 1 step-time 0.21s wps 25.11K ppl 50.54 gN 5.34 bleu 10.13, Thu Jun 28 12:23:31 2018
+  step 7300 lr 1 step-time 0.21s wps 25.21K ppl 49.49 gN 5.45 bleu 10.13, Thu Jun 28 12:23:52 2018
+  step 7400 lr 1 step-time 0.21s wps 25.00K ppl 47.50 gN 5.40 bleu 10.13, Thu Jun 28 12:24:13 2018
+# Finished an epoch, step 7427. Perform external evaluation
+2018-06-28 12:24:19.438938: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:24:19.438939: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:24:19.439027: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-7000, time 0.05s
+  # 1769
+    src: striking residence
+    ref: 引人注目 的 住宅
+    nmt: 精品 住宅
+2018-06-28 12:24:19.508368: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:24:19.508400: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:24:19.508392: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-7000, time 0.05s
+# External evaluation, global step 7000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 34s, Thu Jun 28 12:24:53 2018.
+  bleu dev: 12.0
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 7000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 32s, Thu Jun 28 12:25:27 2018.
+  bleu test: 12.1
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+2018-06-28 12:25:38.017319: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:94] Filling up shuffle buffer (this may take a while): 123945 of 128000
+2018-06-28 12:25:38.335704: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:129] Shuffle buffer filled.
+  step 7500 lr 1 step-time 0.40s wps 14.87K ppl 57.83 gN 6.74 bleu 11.96, Thu Jun 28 12:26:02 2018
+  step 7600 lr 1 step-time 0.24s wps 25.48K ppl 54.80 gN 6.23 bleu 11.96, Thu Jun 28 12:26:27 2018
+  step 7700 lr 1 step-time 0.23s wps 25.27K ppl 49.21 gN 5.87 bleu 11.96, Thu Jun 28 12:26:50 2018
+  step 7800 lr 1 step-time 0.23s wps 24.86K ppl 47.31 gN 5.68 bleu 11.96, Thu Jun 28 12:27:13 2018
+  step 7900 lr 1 step-time 0.21s wps 24.87K ppl 42.49 gN 5.52 bleu 11.96, Thu Jun 28 12:27:34 2018
+  step 8000 lr 1 step-time 0.22s wps 24.84K ppl 42.74 gN 5.55 bleu 11.96, Thu Jun 28 12:27:56 2018
+# Save eval, global step 8000
+2018-06-28 12:27:56.711664: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:27:56.711667: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:27:56.712007: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-8000, time 0.06s
+  # 4017
+    src: first time offered in over 55 years - classic family home in convenient location
+    ref: 经典 住宅 ， 位置 便利 ， 55 年 来 首 次 出售
+    nmt: 精美 住宅 ， 位于 昆士兰州 ， 位置 便利 ， 位置 便利 ， 位置 便利
+2018-06-28 12:27:56.817940: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:27:56.817941: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-8000, time 0.06s
+  eval dev: perplexity 13.64, time 3s, Thu Jun 28 12:28:00 2018.
+  eval test: perplexity 11.74, time 3s, Thu Jun 28 12:28:04 2018.
+  step 8100 lr 1 step-time 0.21s wps 25.00K ppl 42.15 gN 5.42 bleu 11.96, Thu Jun 28 12:28:25 2018
+  step 8200 lr 1 step-time 0.21s wps 24.92K ppl 40.79 gN 5.41 bleu 11.96, Thu Jun 28 12:28:46 2018
+  step 8300 lr 1 step-time 0.21s wps 25.18K ppl 40.47 gN 5.39 bleu 11.96, Thu Jun 28 12:29:08 2018
+  step 8400 lr 1 step-time 0.21s wps 25.33K ppl 40.91 gN 5.43 bleu 11.96, Thu Jun 28 12:29:29 2018
+  step 8500 lr 1 step-time 0.21s wps 25.48K ppl 39.50 gN 5.48 bleu 11.96, Thu Jun 28 12:29:50 2018
+  step 8600 lr 1 step-time 0.21s wps 25.57K ppl 39.60 gN 5.49 bleu 11.96, Thu Jun 28 12:30:11 2018
+  step 8700 lr 1 step-time 0.21s wps 25.34K ppl 38.11 gN 5.48 bleu 11.96, Thu Jun 28 12:30:31 2018
+  step 8800 lr 1 step-time 0.21s wps 25.49K ppl 40.77 gN 5.58 bleu 11.96, Thu Jun 28 12:30:53 2018
+# Finished an epoch, step 8854. Perform external evaluation
+2018-06-28 12:31:04.369644: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:31:04.369665: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:31:04.369665: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-8000, time 0.06s
+  # 3648
+    src: best buy in a rural sought after town
+    ref: 超值 的 住宅 ， 位于 备 受 欢迎 的 城镇 ！
+    nmt: 精品 住宅 ， 位于 城镇 备 受 欢迎 的 城区 城区
+2018-06-28 12:31:04.458877: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:31:04.458908: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:31:04.458906: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-8000, time 0.06s
+# External evaluation, global step 8000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 29s, Thu Jun 28 12:31:33 2018.
+  bleu dev: 13.6
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 8000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 28s, Thu Jun 28 12:32:02 2018.
+  bleu test: 13.8
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+2018-06-28 12:32:13.130689: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:94] Filling up shuffle buffer (this may take a while): 123755 of 128000
+2018-06-28 12:32:13.470582: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:129] Shuffle buffer filled.
+  step 8900 lr 1 step-time 0.38s wps 15.04K ppl 43.61 gN 6.46 bleu 13.58, Thu Jun 28 12:32:30 2018
+  step 9000 lr 1 step-time 0.25s wps 24.77K ppl 44.48 gN 6.41 bleu 13.58, Thu Jun 28 12:32:55 2018
+# Save eval, global step 9000
+2018-06-28 12:32:55.540511: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:32:55.540588: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:32:55.540517: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-9000, time 0.06s
+  # 583
+    src: live or invest in a prime position
+    ref: 精品 公寓 ， 地段 优越 ， 自住 或 投资
+    nmt: 位置 优越 的 住宅 ， 适合 自住 或 投资
+2018-06-28 12:32:55.631624: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:32:55.631624: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-9000, time 0.06s
+  eval dev: perplexity 12.96, time 3s, Thu Jun 28 12:32:59 2018.
+  eval test: perplexity 11.28, time 3s, Thu Jun 28 12:33:02 2018.
+  step 9100 lr 1 step-time 0.23s wps 25.93K ppl 40.99 gN 6.19 bleu 13.58, Thu Jun 28 12:33:25 2018
+  step 9200 lr 1 step-time 0.22s wps 25.48K ppl 37.91 gN 5.87 bleu 13.58, Thu Jun 28 12:33:48 2018
+  step 9300 lr 1 step-time 0.21s wps 25.29K ppl 35.56 gN 5.67 bleu 13.58, Thu Jun 28 12:34:09 2018
+  step 9400 lr 1 step-time 0.21s wps 25.26K ppl 34.63 gN 5.53 bleu 13.58, Thu Jun 28 12:34:30 2018
+  step 9500 lr 1 step-time 0.21s wps 25.21K ppl 34.85 gN 5.51 bleu 13.58, Thu Jun 28 12:34:51 2018
+  step 9600 lr 1 step-time 0.21s wps 25.25K ppl 35.11 gN 5.50 bleu 13.58, Thu Jun 28 12:35:12 2018
+  step 9700 lr 1 step-time 0.21s wps 25.40K ppl 34.68 gN 5.59 bleu 13.58, Thu Jun 28 12:35:33 2018
+  step 9800 lr 1 step-time 0.21s wps 25.38K ppl 33.27 gN 5.55 bleu 13.58, Thu Jun 28 12:35:55 2018
+  step 9900 lr 1 step-time 0.21s wps 25.26K ppl 34.76 gN 5.69 bleu 13.58, Thu Jun 28 12:36:16 2018
+  step 10000 lr 1 step-time 0.22s wps 25.22K ppl 34.58 gN 5.63 bleu 13.58, Thu Jun 28 12:36:38 2018
+# Save eval, global step 10000
+2018-06-28 12:36:38.466740: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:36:38.466775: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:36:38.466780: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-10000, time 0.06s
+  # 4076
+    src: split level family home
+    ref: 错层式 家庭 住宅
+    nmt: 错层式 住宅
+2018-06-28 12:36:38.549368: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:36:38.549404: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-10000, time 0.07s
+  eval dev: perplexity 11.31, time 3s, Thu Jun 28 12:36:42 2018.
+  eval test: perplexity 9.86, time 3s, Thu Jun 28 12:36:45 2018.
+  step 10100 lr 1 step-time 0.21s wps 24.99K ppl 32.33 gN 5.42 bleu 13.58, Thu Jun 28 12:37:06 2018
+  step 10200 lr 1 step-time 0.21s wps 25.54K ppl 32.82 gN 5.50 bleu 13.58, Thu Jun 28 12:37:27 2018
+# Finished an epoch, step 10281. Perform external evaluation
+2018-06-28 12:37:44.766684: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:37:44.766752: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:37:44.766717: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-10000, time 0.06s
+  # 342
+    src: photographs may include upgrade items . unless specifically listed in package detail , these items are not included in advertised price and may be added for an additional cost . price based on noted fa ç ade and standard inclusions . speak to a consultant for full details or visit ausbuild . com . au / terms . all packages subject to developer and applicable local authority ( council ) approval . flexi packs contain allowances for construction & service costs . additional costs may arise based on individual site , soil results . fixed price packages exclude any costs associated with foundation rock excavation / removal .
+    ref: 所 示 图片 可能 包括 升级 设施 。 除非 在 细节 描述 中 有 特别 说明 ， 这些 设施 均 不 包含 于 公布 的 售价 中 ， 可能 会 收取 额外 的 费用 。 价格 根据 房产 外观 和 标准 固定 装置 而 定 。 欢迎 咨询 销售 顾问 了解 更 多 详情 ， 或 可 访问 ausbuild.com.au /terms 。 所有 房产 须 获得 开发商 和 当地 政府 机构 的 批准 。 flexi 套餐 包括 建筑 补贴 和 服务 费用 。 独立 的 场地 和 土壤 勘测 可能 产生 额外 的 费用 。 房产 的 固定 价格 不 包含 地基 石块 挖掘 或 移 除 费用 。
+    nmt: 图片 仅供 参考 。 这些 设施 包括 公布 的 外观 和 标准 。 根据 房产 外观 和 标准 固定 装置 。 根据 房产 外观 和 标准 固定 装置 。 根据 房产 价格 根据 房产 的 销售 顾问 ， 包括 房产 和 房产 （ 包括 ） 、 价格 和 当地 的 价格 。 根据 房产 价格 根据 房产 的 价格 和 当地 的 价格 。 根据 房产 的 价格 和
+2018-06-28 12:37:45.010282: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:37:45.010316: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:37:45.010316: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-10000, time 0.06s
+# External evaluation, global step 10000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 27s, Thu Jun 28 12:38:12 2018.
+  bleu dev: 14.4
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 10000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 23s, Thu Jun 28 12:38:36 2018.
+  bleu test: 15.7
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+2018-06-28 12:38:47.418888: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:94] Filling up shuffle buffer (this may take a while): 125269 of 128000
+2018-06-28 12:38:47.634124: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:129] Shuffle buffer filled.
+  step 10300 lr 1 step-time 0.34s wps 15.79K ppl 34.41 gN 6.27 bleu 14.43, Thu Jun 28 12:38:54 2018
+  step 10400 lr 1 step-time 0.29s wps 22.39K ppl 39.15 gN 7.00 bleu 14.43, Thu Jun 28 12:39:23 2018
+  step 10500 lr 1 step-time 0.23s wps 25.89K ppl 34.74 gN 6.18 bleu 14.43, Thu Jun 28 12:39:46 2018
+  step 10600 lr 1 step-time 0.23s wps 25.80K ppl 34.67 gN 6.29 bleu 14.43, Thu Jun 28 12:40:08 2018
+  step 10700 lr 1 step-time 0.21s wps 25.54K ppl 31.00 gN 5.69 bleu 14.43, Thu Jun 28 12:40:30 2018
+  step 10800 lr 1 step-time 0.21s wps 25.35K ppl 30.55 gN 5.64 bleu 14.43, Thu Jun 28 12:40:51 2018
+  step 10900 lr 1 step-time 0.21s wps 25.27K ppl 30.02 gN 5.58 bleu 14.43, Thu Jun 28 12:41:12 2018
+  step 11000 lr 1 step-time 0.21s wps 25.25K ppl 29.89 gN 5.57 bleu 14.43, Thu Jun 28 12:41:33 2018
+# Save eval, global step 11000
+2018-06-28 12:41:34.208831: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:41:34.208881: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:41:34.208887: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-11000, time 0.06s
+  # 3315
+    src: quaint and character filled !
+    ref: 独特 迷人 的 住宅 ！
+    nmt: 独特 的 住宅 ， 特色 诸多
+2018-06-28 12:41:34.293086: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:41:34.293128: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-11000, time 0.06s
+  eval dev: perplexity 10.49, time 3s, Thu Jun 28 12:41:37 2018.
+  eval test: perplexity 9.10, time 3s, Thu Jun 28 12:41:41 2018.
+2018-06-28 12:41:42.945532: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:41:42.945569: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:41:42.945566: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-11000, time 0.06s
+  # 3002
+    src: - blue ribbon location on macquarie street , near martin place
+    ref: - 位置 优越 ， 地处 macquarie street ， 临近 martin place
+    nmt: - 位于 macquarie street ， 紧邻 macquarie street
+2018-06-28 12:41:43.032193: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:41:43.032252: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:41:43.032214: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-11000, time 0.06s
+# External evaluation, global step 11000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 28s, Thu Jun 28 12:42:11 2018.
+  bleu dev: 16.4
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 11000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 28s, Thu Jun 28 12:42:41 2018.
+  bleu test: 16.5
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+  step 11100 lr 1 step-time 0.21s wps 25.42K ppl 29.28 gN 5.56 bleu 16.36, Thu Jun 28 12:43:02 2018
+  step 11200 lr 1 step-time 0.21s wps 25.50K ppl 29.25 gN 5.59 bleu 16.36, Thu Jun 28 12:43:23 2018
+  step 11300 lr 1 step-time 0.21s wps 25.60K ppl 28.98 gN 5.57 bleu 16.36, Thu Jun 28 12:43:44 2018
+  step 11400 lr 1 step-time 0.21s wps 25.50K ppl 29.71 gN 5.57 bleu 16.36, Thu Jun 28 12:44:05 2018
+  step 11500 lr 1 step-time 0.21s wps 25.58K ppl 30.03 gN 5.69 bleu 16.36, Thu Jun 28 12:44:26 2018
+  step 11600 lr 1 step-time 0.21s wps 25.57K ppl 28.65 gN 5.54 bleu 16.36, Thu Jun 28 12:44:47 2018
+  step 11700 lr 1 step-time 0.21s wps 25.56K ppl 28.79 gN 5.59 bleu 16.36, Thu Jun 28 12:45:08 2018
+# Finished an epoch, step 11708. Perform external evaluation
+2018-06-28 12:45:09.765459: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:45:09.765462: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:45:09.765505: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-11000, time 0.06s
+  # 3367
+    src: best of all worlds : easy care - resort - like complex - mansfield state high . catchment
+    ref: 易于 打理 的 度假 式 联 排 别墅 ， 位于 mansfield state 中学 学区 ！
+    nmt: 易于 打理 的 度假 住宅 ， 位于 mansfield state high school 学区 ， 位于 mansfield state 学区
+2018-06-28 12:45:09.869849: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:45:09.869891: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:45:09.869891: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-11000, time 0.06s
+# External evaluation, global step 11000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 29s, Thu Jun 28 12:45:39 2018.
+  bleu dev: 16.4
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 11000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 27s, Thu Jun 28 12:46:06 2018.
+  bleu test: 16.5
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+2018-06-28 12:46:17.565172: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:94] Filling up shuffle buffer (this may take a while): 125278 of 128000
+2018-06-28 12:46:17.781582: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:129] Shuffle buffer filled.
+  step 11800 lr 1 step-time 0.40s wps 15.13K ppl 35.07 gN 7.35 bleu 16.36, Thu Jun 28 12:46:46 2018
+  step 11900 lr 1 step-time 0.24s wps 25.83K ppl 32.58 gN 6.50 bleu 16.36, Thu Jun 28 12:47:10 2018
+  step 12000 lr 1 step-time 0.23s wps 25.58K ppl 29.32 gN 6.03 bleu 16.36, Thu Jun 28 12:47:33 2018
+# Save eval, global step 12000
+2018-06-28 12:47:33.626533: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:47:33.626570: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:47:33.627054: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-12000, time 0.06s
+  # 1643
+    src: first class investment opportunity in a prime cbd position at unihouse , rundle mall
+    ref: 一流 公寓 ， 位于 unihouse , rundle mall 的 中心 商务区 ， 适合 投资
+    nmt: 精品 住宅 ， 位于 <unk> <unk> ， 位于 <unk> point
+2018-06-28 12:47:33.723961: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:47:33.724076: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-12000, time 0.06s
+  eval dev: perplexity 11.81, time 3s, Thu Jun 28 12:47:37 2018.
+  eval test: perplexity 10.07, time 3s, Thu Jun 28 12:47:40 2018.
+2018-06-28 12:47:42.364077: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:47:42.364098: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:47:42.364098: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-12000, time 0.06s
+  # 2713
+    src: stunning elegance
+    ref: 高雅 迷人 住宅
+    nmt: 典雅 典雅 住宅
+2018-06-28 12:47:42.442493: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:47:42.442531: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-12000, time 0.06s
+  eval dev: perplexity 11.81, time 3s, Thu Jun 28 12:47:46 2018.
+  eval test: perplexity 10.07, time 3s, Thu Jun 28 12:47:49 2018.
+2018-06-28 12:47:49.660124: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:47:49.660202: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:47:49.660158: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/translate.ckpt-12000, time 0.06s
+# External evaluation, global step 12000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 21s, Thu Jun 28 12:48:10 2018.
+  bleu dev: 15.7
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 12000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 22s, Thu Jun 28 12:48:33 2018.
+  bleu test: 16.6
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# Final, step 12000 lr 1 step-time 0.23s wps 25.58K ppl 29.32 gN 6.03 dev ppl 11.81, dev bleu 15.7, test ppl 10.07, test bleu 16.6, Thu Jun 28 12:48:34 2018
+# Done training!, time 1794s, Thu Jun 28 12:48:34 2018.
+# Start evaluating saved best models.
+2018-06-28 12:48:34.647870: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:48:34.647898: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:48:34.647938: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/best_bleu/translate.ckpt-11000, time 0.06s
+  # 3730
+    src: the pinnacle of perfection …
+    ref: 一流 住宅
+    nmt: 精品 住宅
+2018-06-28 12:48:34.729196: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:48:34.729235: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded eval model parameters from /home/ubuntu/ai-translation/translate_model/best_bleu/translate.ckpt-11000, time 0.06s
+  eval dev: perplexity 10.49, time 3s, Thu Jun 28 12:48:38 2018.
+  eval test: perplexity 9.10, time 3s, Thu Jun 28 12:48:42 2018.
+2018-06-28 12:48:42.241400: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+2018-06-28 12:48:42.241430: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.en is already initialized.
+2018-06-28 12:48:42.241478: I tensorflow/core/kernels/lookup_util.cc:373] Table trying to initialize from file /home/ubuntu/ai-translation/data/vocab.cn is already initialized.
+  loaded infer model parameters from /home/ubuntu/ai-translation/translate_model/best_bleu/translate.ckpt-11000, time 0.06s
+# External evaluation, global step 11000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_dev.
+  done, num sentences 4560, num translations per input 1, time 28s, Thu Jun 28 12:49:11 2018.
+  bleu dev: 16.4
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# External evaluation, global step 11000
+  decoding to output /home/ubuntu/ai-translation/translate_model/output_test.
+  done, num sentences 4561, num translations per input 1, time 28s, Thu Jun 28 12:49:39 2018.
+  bleu test: 16.5
+  saving hparams to /home/ubuntu/ai-translation/translate_model/hparams
+# Best bleu, step 11000 lr 1 step-time 0.23s wps 25.58K ppl 29.32 gN 6.03 dev ppl 10.49, dev bleu 16.4, test ppl 9.10, test bleu 16.5, Thu Jun 28 12:49:40 2018
+/home/ubuntu/anaconda3/envs/tensorflow_p36/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
