@@ -25,14 +25,13 @@ import numpy as np
 
 import tensorflow as tf
 
-from  import attention_model
-from  import gnmt_model
-from  import model as nmt_model
-from  import model_helper
-from utils import misc_utils as utils
-from utils import evaluation_utils
+from . import attention_model
+from . import gnmt_model
+from . import model as nmt_model
+from . import model_helper
+from .utils import misc_utils as utils
 
-__all__ = ['inference', 'single_worker_inference', 'decode_and_evaluate'
+__all__ = ['inference', 'single_worker_inference', 'decode'
            , 'get_translation']
 
 
@@ -131,7 +130,7 @@ def decode(
                             sent_id, tgt_eos=tgt_eos,
                             subword_option=subword_option)
 
-                    translations.append(translation)
+                    translations.append(translation.decode("utf-8"))
         except tf.errors.OutOfRangeError:
             utils.print_time('  done, num sentences %d, num translations per input %d'
                               % (num_sentences,

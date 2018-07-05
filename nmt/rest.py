@@ -9,14 +9,18 @@ import tensorflow as tf
 
 from flask import Flask
 from flask import request
+from flask import jsonify
 
 from . import rest_inference
-from utils import misc_utils as utils
-from utils import vocab_utils
+from .utils import misc_utils as utils
+from .utils import vocab_utils
 
 app = Flask(__name__)
 
-FLAGS = None
+FLAGS = tf.contrib.training.HParams(
+  attention='', attention_architecture='standard', avg_ckpts=False, batch_size=128, beam_width=0, check_special_token=True, ckpt='', colocate_gradients_with_ops=True, decay_scheme='', dev_prefix=None, dropout=0.2, embed_prefix=None, encoder_type='uni', eos='</s>', forget_bias=1.0, hparams_path=None, infer_batch_size=32, inference_input_file='/Users/mrzhao/learning/ai-translation/data/test.en', inference_list=None, inference_output_file='/Users/mrzhao/learning/ai-translation/data/output_infer', inference_ref_file=None, init_op='uniform', init_weight=0.1, jobid=0, learning_rate=1.0, length_penalty_weight=0.0, log_device_placement=False, max_gradient_norm=5.0, max_train=0, metrics='bleu', num_buckets=5, num_decoder_layers=None, num_embeddings_partitions=0, num_encoder_layers=None, num_gpus=1, num_inter_threads=0, num_intra_threads=0, num_keep_ckpts=5, num_layers=2, num_train_steps=12000, num_translations_per_input=1, num_units=32, num_workers=1, optimizer='sgd', out_dir='/Users/mrzhao/learning/nmt/nmt/translate_model', output_attention=True, override_loaded_hparams=False, pass_hidden_state=True, random_seed=None, residual=False, sampling_temperature=0.0, scope=None, share_vocab=False, sos='<s>', src=None, src_max_len=50, src_max_len_infer=None, steps_per_external_eval=None, steps_per_stats=100, subword_option='', test_prefix=None, tgt=None, tgt_max_len=50, tgt_max_len_infer=None, time_major=True, train_prefix=None, unit_type='lstm', vocab_prefix=None, warmup_scheme='t2t', warmup_steps=0
+)
+OUTPUT_DIR = '/Users/mrzhao/learning/nmt/nmt/translate_model'
 
 def create_hparams(flags):
     """Create training hparams."""
@@ -92,8 +96,7 @@ def create_hparams(flags):
 def ensure_compatible_hparams(hparams, default_hparams, hparams_path):
     """Make sure the loaded hparams is compatible with new changes."""
 
-    default_hparams = \
-        utils.maybe_parse_standard_hparams(default_hparams,
+    default_hparams = utils.maybe_parse_standard_hparams(default_hparams,
             hparams_path)
 
   # For compatible reason, if there are new fields in default_hparams,
@@ -131,14 +134,12 @@ def load_hparams(out_dir, default_hparams, hparams_path):
 
 
 def predict(infer_data):
-    flags = FLAGS
-    out_dir = '/home/ubuntu/ai-translation/translate_model'
     default_hparams = create_hparams(FLAGS)
     inference_fn = rest_inference.inference
 
     # Load hparams.
 
-    hparams = load_hparams(out_dir, default_hparams, flags.hparams_path)
+    hparams = load_hparams(OUTPUT_DIR, default_hparams, FLAGS.hparams_path)
 
     # Inference indices
 
@@ -146,10 +147,10 @@ def predict(infer_data):
 
     # Inference
 
-    ckpt = flags.ckpt
+    ckpt = FLAGS.ckpt
     if not ckpt:
-        ckpt = tf.train.latest_checkpoint(out_dir)
-    return inference_fn(ckpt, infer_data, hparams, num_workers, jobid)
+        ckpt = tf.train.latest_checkpoint(OUTPUT_DIR)
+    return inference_fn(ckpt, infer_data, hparams)
 
 
 @app.route('/predict', methods=['POST'])
