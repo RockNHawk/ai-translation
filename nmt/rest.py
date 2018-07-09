@@ -10,12 +10,14 @@ import tensorflow as tf
 from flask import Flask
 from flask import request
 from flask import jsonify
+from flask_cors import CORS
 
 from . import rest_inference
 from .utils import misc_utils as utils
 from .utils import vocab_utils
 
 app = Flask(__name__)
+cors = CORS(app)
 
 FLAGS = tf.contrib.training.HParams(
   attention='', attention_architecture='standard', avg_ckpts=False, batch_size=128, beam_width=0, check_special_token=True, ckpt='', colocate_gradients_with_ops=True, decay_scheme='', dev_prefix=None, dropout=0.2, embed_prefix=None, encoder_type='uni', eos='</s>', forget_bias=1.0, hparams_path=None, infer_batch_size=32, inference_input_file='/Users/mrzhao/learning/ai-translation/data/test.en', inference_list=None, inference_output_file='/Users/mrzhao/learning/ai-translation/data/output_infer', inference_ref_file=None, init_op='uniform', init_weight=0.1, jobid=0, learning_rate=1.0, length_penalty_weight=0.0, log_device_placement=False, max_gradient_norm=5.0, max_train=0, metrics='bleu', num_buckets=5, num_decoder_layers=None, num_embeddings_partitions=0, num_encoder_layers=None, num_gpus=1, num_inter_threads=0, num_intra_threads=0, num_keep_ckpts=5, num_layers=2, num_train_steps=12000, num_translations_per_input=1, num_units=32, num_workers=1, optimizer='sgd', out_dir='/Users/mrzhao/learning/nmt/nmt/translate_model', output_attention=True, override_loaded_hparams=False, pass_hidden_state=True, random_seed=None, residual=False, sampling_temperature=0.0, scope=None, share_vocab=False, sos='<s>', src=None, src_max_len=50, src_max_len_infer=None, steps_per_external_eval=None, steps_per_stats=100, subword_option='', test_prefix=None, tgt=None, tgt_max_len=50, tgt_max_len_infer=None, time_major=True, train_prefix=None, unit_type='lstm', vocab_prefix=None, warmup_scheme='t2t', warmup_steps=0
@@ -155,7 +157,7 @@ def predict(infer_data):
 
 @app.route('/predict', methods=['POST'])
 def main():
-    infer_data = request.json
+    infer_data = request.get_json()
     translation = predict(infer_data)
     return jsonify(translation)
 
