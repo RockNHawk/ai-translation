@@ -154,7 +154,10 @@ def predict(infer_data):
         ckpt = tf.train.latest_checkpoint(OUTPUT_DIR)
     return inference_fn(ckpt, infer_data, hparams)
 
-
+@app.route('/index')
+def index():
+    return 'hello, ai-translation'
+    
 @app.route('/predict', methods=['POST'])
 def main():
     infer_data = request.get_json()
