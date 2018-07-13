@@ -24,52 +24,22 @@ import time
 import numpy as np
 
 import tensorflow as tf
-
-from . import attention_model
-from . import gnmt_model
-from . import model as nmt_model
 from . import model_helper
 from .utils import misc_utils as utils
 
-__all__ = ['inference', 'single_worker_inference', 'decode'
+__all__ = ['single_worker_inference', 'decode'
            , 'get_translation']
-
-
-def inference(
-    ckpt,
-    inference_data,
-    hparams,
-    num_workers=1,
-    jobid=0,
-    scope=None,
-    ):
-    """Perform translation."""
-
-    if not hparams.attention:
-        model_creator = nmt_model.Model
-    elif hparams.attention_architecture == 'standard':
-        model_creator = attention_model.AttentionModel
-    elif hparams.attention_architecture in ['gnmt', 'gnmt_v2']:
-        model_creator = gnmt_model.GNMTModel
-    else:
-        raise ValueError('Unknown model architecture')
-    infer_model = model_helper.create_infer_model(model_creator,
-            hparams, scope)
-
-    return single_worker_inference(infer_model, ckpt, inference_data,
-                                   hparams)
-
 
 def single_worker_inference(
     infer_model,
     ckpt,
     inference_data,
     hparams,
+    session
     ):
     """Inference with a single worker."""
 
-    with tf.Session(graph=infer_model.graph,
-                    config=utils.get_config_proto()) as sess:
+    with session as sess:
         loaded_infer_model = model_helper.load_model(infer_model.model,
                 ckpt, sess, 'infer')
         sess.run(infer_model.iterator.initializer,
