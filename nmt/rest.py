@@ -167,12 +167,9 @@ else:
 infer_model = model_helper.create_infer_model(model_creator,
             hparams, None)
 
-session = tf.Session(graph=infer_model.graph,
-                    config=utils.get_config_proto())
-
 def predict(infer_data):
     return inference_fn(infer_model, ckpt, infer_data,
-                                   hparams, session)
+                                   hparams)
 
 @app.route('/index')
 def index():

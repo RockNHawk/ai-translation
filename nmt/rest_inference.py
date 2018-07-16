@@ -34,12 +34,12 @@ def single_worker_inference(
     infer_model,
     ckpt,
     inference_data,
-    hparams,
-    session
+    hparams
     ):
     """Inference with a single worker."""
 
-    with session as sess:
+    with tf.Session(graph=infer_model.graph,
+                    config=utils.get_config_proto()) as sess:
         loaded_infer_model = model_helper.load_model(infer_model.model,
                 ckpt, sess, 'infer')
         sess.run(infer_model.iterator.initializer,
@@ -50,11 +50,8 @@ def single_worker_inference(
 
         utils.print_out('# Start decoding')
         return decode(
-            'infer',
             loaded_infer_model,
             sess,
-            ref_file=None,
-            metrics=hparams.metrics,
             subword_option=hparams.subword_option,
             beam_width=hparams.beam_width,
             tgt_eos=hparams.eos,
@@ -63,11 +60,8 @@ def single_worker_inference(
 
 
 def decode(
-    name,
     model,
     sess,
-    ref_file,
-    metrics,
     subword_option,
     beam_width,
     tgt_eos,
