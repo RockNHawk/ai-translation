@@ -22,6 +22,7 @@ from . import model_helper
 
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII']=False
 cors = CORS(app)
 
 FLAGS = tf.contrib.training.HParams(
