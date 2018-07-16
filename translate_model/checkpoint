@@ -1,6 +1,0 @@
-model_checkpoint_path: "/home/ubuntu/ai-translation/translate_model/translate.ckpt-12000"
-all_model_checkpoint_paths: "/home/ubuntu/ai-translation/translate_model/translate.ckpt-8000"
-all_model_checkpoint_paths: "/home/ubuntu/ai-translation/translate_model/translate.ckpt-9000"
-all_model_checkpoint_paths: "/home/ubuntu/ai-translation/translate_model/translate.ckpt-10000"
-all_model_checkpoint_paths: "/home/ubuntu/ai-translation/translate_model/translate.ckpt-11000"
-all_model_checkpoint_paths: "/home/ubuntu/ai-translation/translate_model/translate.ckpt-12000"
