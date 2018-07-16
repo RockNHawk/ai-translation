@@ -1,0 +1,9 @@
+bin/
+lib/
+.Python
+include/
+nmt/utils/
+nmt/__pycache__/
+nmt/scripts/
+translate_model/
+rea_translate_model/
