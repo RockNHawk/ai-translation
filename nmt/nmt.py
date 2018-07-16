@@ -36,6 +36,8 @@ utils.check_tensorflow_version()
 FLAGS = None
 
 
+__all__ = ['add_arguments','create_hparams','create_or_load_hparams','ensure_compatible_hparams']
+
 def add_arguments(parser):
   """Build ArgumentParser."""
   parser.register("type", "bool", lambda v: v.lower() == "true")
